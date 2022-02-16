@@ -1,0 +1,25 @@
+:root {
+    --color-black: #1F2421;
+    --color-white: #EFF1F3;
+    --color-blue: #01A7C2;
+    --color-orange: #FE654F;
+}
+
+body {
+    margin: 0px;
+}
+
+.contenedor {
+
+    /* 1-Tamaño maximo del elemento */
+    max-width: 80%;
+
+    /* 2-Centrar elemento */
+    margin-left: auto;
+    margin-right: auto;
+
+    /* 3-Definir bordes */
+    border-color: var(--color-black);
+    border-width: 2px;
+    border-style: solid;
+}
