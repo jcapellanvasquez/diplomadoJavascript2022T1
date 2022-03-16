@@ -17,6 +17,28 @@
     <main class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12 col-md-4">
+                <div class="card my-5">
+                    <div class="card-body">
+                        <h3 class="card-title">🔎 Filtros</h3>
+                        <form id="mi-form">
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Monto</label>
+                                <input type="number" step="any" class="form-control" name="amount" id="amount">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Fecha</label>
+                                <input type="date" class="form-control" name="fecha" id="fecha">
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <button type="submit" class="btn btn-light">Aplicar filtros</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <h4 class="mb-3">Listado de transacciones</h4>
+                <hr>
                 <div class="list-group" id="listado">
                 </div>
             </div>

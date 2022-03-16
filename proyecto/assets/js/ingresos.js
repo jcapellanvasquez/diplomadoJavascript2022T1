@@ -12,9 +12,8 @@ function iniciar() {
 
     for (let i = 0; i < cuentasGastos.length; i++) {
         const cuenta = cuentasGastos[i];
-        listadoGastosSelect.innerHTML = listadoGastosSelect.innerHTML +
-            `
-        <option value="${cuenta.name}">${cuenta.name}</option>
+        listadoGastosSelect.innerHTML = listadoGastosSelect.innerHTML + `
+           <option value="${cuenta.name}">${cuenta.name}</option>
        `;
     }
 }
@@ -22,8 +21,8 @@ function iniciar() {
 function salvar(event) {
     event.preventDefault();
     const cuentaSeleccionada = event.target.elements["cuenta"].value
-    const cuenta =  getCuentas().find(function(cuenta) {
-        if(cuenta.name === cuentaSeleccionada) {
+    const cuenta = getCuentas().find(function (cuenta) {
+        if (cuenta.name === cuentaSeleccionada) {
             return true;
         }
         return false
@@ -35,7 +34,24 @@ function salvar(event) {
         notas: event.target.elements["notas"].value,
     }
 
-    salvarTransaccion(transaccion)
+    if (validarDatos(transaccion)) {
+        salvarTransaccion(transaccion)
+    }
+}
+
+
+function validarDatos(transaccion) {
+    if (+transaccion.amount === 0) {
+        alert("El monto es obligatorio")
+        return false;
+    }
+    else if (!transaccion.fecha_registro) {
+        alert("La fecha es obligatoria")
+        return false;
+    }
+    else {
+        return true;
+    }
 }
 
 window.addEventListener('load', function (event) {
